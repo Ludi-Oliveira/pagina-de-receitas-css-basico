@@ -1,0 +1,116 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.top-bar{
+    background-color: #ff6b28;
+    padding: 15px;
+    text-align: center;
+}
+
+#cake{
+    background-image: url(image/cabecalho_bolo.jpg);
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    max-width: 990px;
+    margin: auto;
+    padding: 0 40px;
+    /* Inicialmente me esqueci de inserir 0, que são top e botton. */
+    margin-top: 100px;
+}
+
+h1, h2{
+    color: #ff6b28;
+}
+
+h1{
+    color: #ff6b28;
+    font-size: 48px;
+}
+
+h2{
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+
+.button{
+    background-color: #ff6b28;
+    padding: 16px;
+    border-radius: 20px;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    /* color: white; */
+    /* Se alterasse a cor nesse seletor, todos os links do projeto teriam a letra na cor branca. Caso algum tenha um fundo branco, não irá funcionar. O melhor a se fazer é alterar no seletor a tudo que é comum a todos os links (nesse caso é a ausência de traçado) e fazer as alterações específicas em casa class criada */
+}
+
+.card{
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    padding: 70px 100px;
+    /* padding cria espaço entre o conteúdo e as bordas dos cards */
+    margin-top: 50px;
+    /* margin-top cria espaço entre os cards */
+}
+
+.card:hover{
+    box-shadow: 8px 8px 15px 12px rgb(205, 205, 205, 0.25);
+}
+
+.cursor1{
+    cursor: url(image/cursor_ingredientes.png), auto;
+}
+
+.cursor2{
+    cursor: url(image/cursor_preparo.png), auto;
+}
+
+.cursor3{
+    cursor: url(image/cursor_intrucoes.png), auto;
+}
+/* Não deixe espaço entre url e o parênteses. Dá erro. */
+
+li{
+   margin-bottom: 14px; 
+}
+
+.ingredientes{
+    margin-bottom: 50px;
+}
+
+p, li{
+    line-height: 28px;
+}
+
+.footer{
+    background-color: #ff6b28;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.pfooter{
+    font-size: 16px;
+    max-width: 500px;
+    margin: auto;
+    line-height: 24px;
+    /* essas configs foram feitas na tag p, que é pai da tag a. Geralmente o elemento filho herda as configs do pai, mas "a" tem suas configs específicas, então as configs do seu pai não influenciam, como a cor da letra depois que o link é acessado, do caso do filho ser um a */
+}
+
+.linkfooter{
+    color: white;
+    /* pela explicação acima, foi criado uma class no "a" do footer para alterar nele a cor */
+}

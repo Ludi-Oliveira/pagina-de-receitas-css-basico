@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas projeto</title>
+</head>
+
+<body>
+    <h2>
+        1 - Explicações sobre o projeto:
+    </h2>
+
+    <p>
+        O objetivo é reproduzir sites existentes para treinar as aulas.
+        <br>
+        O site proposto é o TudoGostoso. Na página inicial existem elementos não explicado ainda, mas o objetivo é
+        tentar fazer partes do site que já foram explicadas.
+        <br>
+        Caso queira reproduzir uma página inteira, pode fazer uma versão mais simples, usando ensinamentos das aulas.
+    </p>
+
+    <h2>
+        2 - Especificações do site:
+    </h2>
+
+    <ul>
+        <li>Fonte: Lato (google fonts)</li>
+        <li>Cor das fontes: #ff6b28</li>
+        <li>Cor da top bar e da footer: #ff6b28</li>
+        <li>Link do site de inspiração: <a target="_blank"
+                href="https://www.tudogostoso.com.br/receita/3004-bolo-de-fuba-com-goiabada.html">Bolo de fubá com
+                goiabada</a></li>
+    </ul>
+
+    <ul>A página é composta de:
+        <li>Top-head: com fundo laranja e a logo TudoGostoso.</li>
+        <li>Título da receita em laranja.</li>
+        <li>3 div para ingredientes, modo de preparo e instruções. Cada uma tem um cursor diferente e o fundo se
+            evidencia quando o mouse está em cima. </li>
+        <li>Footer: com um texto e fundo laranja</li>
+    </ul>
+
+    <h2>
+        3 - Soluções professor:
+    </h2>
+
+    <ol><strong>Top-bar e header</strong>
+        <li>Criar div com class "top-bar".
+            <br>
+            <strong>Atenção:</strong> não use espaço em nomes de classe, pois o programa entenderá como classes
+            diversas. Divida usando um separador padrão, como "-". Evite acentos.
+        </li>
+
+        <li>Dentro da div tem uma img, que é o logo do site.</li>
+
+        <li>No css começa a config o top-bar, que possui background e é centralizado.
+            <br>
+            Inicia alterando o background-color.
+            <br>
+            Inclui padding para aumentar o espaçamento entre a logo e as bordas do background.
+            <br>
+            Para centralizar a imagem ele usou text-align.
+        </li>
+
+        <li>O próximo passo, e que pode ser feito primeiro, é tirar o margin e o padding zero, no elemento
+            <strong>html</strong> e no <strong>body</strong>, que são os elementos padrões.
+            <br>
+            Funciona se colocar apenas no body, mas é melhor tirar desses dois elementos (e de outros). Se chama resetar
+            o css. Será visto mais a frente.
+            <br>
+            Para não indicar os dois seletores de forma separada, construindo um código muito grande, pode separá-los
+            por vírgula, pois são as mesmas configurações.
+            No body, separadamente, adicione também a font-family e o font-size que serão usados em todo o projeto. Size diferente será especificado em seletor específico.
+        </li>
+
+        <li><strong>Imagem do bolo:</strong> cria-se uma div (dentro do body) com id, pois é o único da página. Não terá nada dentro
+            dessa div.
+            <br>
+            No css, esse id é config com: background + url (só com isso a div não mostra nada, pois não foi add nenhum
+            conteúdo no seu html); height (para a div exibir a imagem); background-size para melhorar a imagem e
+            fazer com que ela cubra a tela (verticalmente está bom, se o height for o mesmo, mas a imagem não está
+            exatamente como a original); background-position (para centralizar a imagem e assim ela fica como a
+            original).
+            <br>
+            Se utiliza a div com background-image ao invés do img no html pois facilita a config com size e position
+            do background.
+        </li>
+    </ol>
+
+    <ol><strong>Conteúdo</strong>
+        <li><strong>Ingredientes, preparo e instruções:</strong>
+            Ao analisar se percebe que são partes parecidas, que possuem um background na forma de um cartão.
+            <br>
+            Ao aumentar a tela o conteúdo fica centralizado.
+        </li>
+
+        <li>
+            Crie div (dentro do body) que engloba todo o conteúdo (exceto o footer). Receberá uma class=content.
+        </li>
+        <li>
+            Dentro do content, insira h1, para o nome da receita.
+        </li>
+        <li><strong>Nova div</strong> dentro de content, que recebe class=card. Dentro dela insira h2, para ingredientes.
+        <br>
+        Crie mais duas divs dessa maneira, para preparo e instruções, pois as três possuem configs iguais.
+        <br>
+        No final, a div content terá três div card, e cada uma terá uma class chamada de card.
+        </li>
+
+        <li>
+            <strong>Ingredientes:</strong>
+            <br>
+            Existe uma ul com seus li's. 
+            <br>
+            Essa ul recebe uma class. Pode ser chamada, p.ex., como lista-ingredientes. A ausência de "de" não influencia. 
+                       
+        </li>
+
+        <li>
+            <strong>Button:</strong>
+            Abaixo da lista e é um link.
+            Recebe uma class, para alterar o estilo. O seu conteúdo será: comprar ingredientes.
+            <br>
+            No CSS: background-color, padding px, Border-radius e color (se todos os links possuem a mesma cor, pode colocar no seletor a).
+        </li>
+
+        <li>
+            <strong>Seletor a</strong>
+            <br>
+            Para que nenhum link tenha sublinhado ou fique roxo após ser acessado. Insira Text-decoration.
+        </li>
+
+        <li>
+            <strong>Modo de preparo:</strong>
+            <br>
+            Será uma OL. 
+        </li>
+
+        <li>
+            <strong>Tela responsiva:</strong>
+            <br>
+            Quando se aumenta a tela todo o conteúdo se mantem colado na esquerda. O objetivo é que tudo fique centralizado.
+            <br>
+            Na classe <strong>content</strong>, use max-width com 990px. Faz com que a largura do conteúdo seja limitado até um número máximo. Nesse caso não ultrapassa 990. Faz com que o conteúdo não ocupe toda a largura da tela.
+            <br>
+            <strong>Margin:</strong>, para centralizar o conteúdo.
+            <br>
+            <strong>Padding:</strong> quando diminui a tela o conteúdo ainda fica colado na esquerda. Padding cria um afastamento da borda.
+            <br>
+            <strong>Margin-top</strong>, para afastar do bolo.
+        </li>
+
+        <li>
+            <strong>Cor das fontes:</strong> posso indicar todos os h's em um seletor (h1, h2...) e definir uma cor, quando são iguais.
+            <br>
+        </li>
+
+        <li>
+            <strong>Tamanho fonte</strong>: é uma config específica. Um seletor para cada um. 
+            <br>
+            <strong>H1</strong> somente cor e tamanho.
+            <br>
+            <strong>H2</strong>, color, size e margin-botton
+        </li>
+
+        <li>
+            <strong>Card:</strong>
+            <br>
+            <strong>Border</strong>: só para conseguir ver as configs realizadas.
+            <br>
+            <strong>Padding:</strong> para criar espaçamento interno, entre o conteúdo e a borda criada. Top+botton right+left. 
+            <br>
+            <strong>Margin</strong>: para criar um espaço entre os cards. Descubra se é top ou botton.
+            <br>
+            <strong>Border-radius</strong>
+        </li>
+
+        <li>
+            <strong>Pseudo-selector: Hover</strong>
+            <br>
+            Para criar o efeito quando o mouse está em cima do card: <strong>.card:hover</strong>. Dentro disso insira box-shadow (8px 8px 15px 12px rgba (205, 205, 205, 0.25)).
+            <br>
+            Retire o border criado anteriormente.
+        </li>
+
+        <li>
+            <strong>Cursor:</strong>
+            <br>
+            Cada card tem um cursor diferente.
+            <strong>No html</strong>, crie classes diferentes para cada card. Basta escrever um nome diferente dentro das classes cards.
+            <br>
+            <strong>CSS:</strong> em cada seletor de cursor, insira a propriedade <strong>cursor</strong>, com url dentro.
+            <br>
+            Nada irá mudar, pois quando se usa um cursor customizado é necessário indicar um backup padrão, caso o primeiro falhe. Mesma sistemática das fontes. Dessa forma, insira <strong>,default/auto</strong> (que são padrões). Pode inserir qualquer um, dentro dos padrões. Atenção: url e cursor padrão dentro da propriedade cursor.
+        </li>
+
+        <li>
+            <strong>
+                Atenção:
+            </strong> :hover e os 3 seletores para alterar os cursores são separados. 
+        </li>
+
+        <li>
+            No css, use o seletor <strong>li</strong> para alterar o espaçamento entre as linhas da seção Ingredientes, com margin (descubra direção e px).
+            <br>
+            Insira um margin-bottom na class dos ingredientes (tag ul), para afastá-lo do botão/link.
+        </li>
+    </ol>
+
+    <strong>continuar daqui</strong>
+
+    <ol>
+        <strong>Instruções e Footer:</strong>
+
+        <li>
+            <strong>Instruções:</strong>:
+            <br>
+            Prepare o html caso não tenha feito antes. 
+            <br>
+            Crie uma div que conterá h2 e p. 
+            <br>
+            Algumas config são serão herdadas por essa div, pois já foram criadas no css.
+            <br>
+            Insira class card e cursor na div.
+        </li>
+
+        <li>
+            Ainda nas instruções, altere o espaçamento entre as linhas, usando o seletor p, assim todos os parágrafos terão o mesmo espaçamento. Por padrão, o espaçamento será o tamanho da fonte + 8px.
+            <br>
+            Essa propriedade não será aplicada nos outros cards, pois são li.
+            <br>
+            Para que todas as linhas da página tenham a mesma altura, use os seletores p e li juntos, separados por vírgula.
+        </li>
+
+        <li>
+            <strong>Footer</strong>
+            <br>
+            Inserida depois da div content e conterá uma class e p, que também terá sua class.
+            <br>
+            No css use a class da div para alterar o estilo com background-color, color, padding px, text-align. 
+            <br>
+            Ao aumentar a tela o texto ocupa ela inteira. Para limitar seu tamanho use a class criada para os 'p' no css para limitar o tamanho máximo de width.
+            <br>
+            Independente do tamanho da tela o texto ficará do mesmo tamanho, mas fica colado na borda esquerda.
+            <br>
+            Para resolver isso, margin-auto, para centralizar.
+            <br>
+            Insira um font-size diverso e altere o line-height.
+            <br>
+            Dentro desse parágrafo tem um endereço de e-mail que precisa virar um link. 
+        </li>
+
+        <li>
+            A tag "a" do "comprar ingredientes" possui uma class.
+            <br>
+            No css foi retirado o sublinhado no seletor "a" e alterado a cor do texto na class, pois assim outros links poderiam ter config de cor diferentes.
+            <br>
+            Quando se modifica a class que está dentro do link, por classe ser mais específico do que a tag (a), as alterações serão aplicadas.
+            <br>
+            No link do rodapé, ele fica azul ou roxo, como o padrão de links, mesmo já tendo configurado o color na class da div (o mesmo aconteceria se fosse na class do p)
+            <br>
+            No caso do rodapé o "a" não tem uma classe e não tem nenhuma config aplicada diretamente a ele.
+            <br>
+            As configurações foram feitas na class que pertence ao "p", que é pai da tag a. Poderiamos pensar que o "a" herdaria a config de cor, mas como o "a" tem por padrão uma cor específica (azul e roxo) ela irá ser aplicada no lugar da cor do elemento pai. 
+            <br>
+            Para resolver isso, crie uma class no "a" do rodapé e no css altere a cor.
+            <br>
+            Retire a propriedade color na class do botão comprar e no html insira o nome da class criada para o rodapé na class do botão comprar. 
+            <br>
+            Outra soluçao seria delimitar a cor branca no seletor "a" do css, mas dessa forma todos os links da página seriam brancos. Caso tenha um link com o fundo branco, essa config não funcionará. O melhor é criar a class e individualizar.
+            
+        </li>
+
+    </ol>
+
+    <ol><strong>Definições de algumas tags</strong>
+        <li>
+            <strong>Background-size:</strong>
+            <br>
+            Existem quatro sintaxes diferentes que você pode usar com esta propriedade: a sintaxe da palavra-chave ("auto", "cover" e "contain"), a sintaxe de um valor (define a largura da imagem (a altura se torna "auto"), a sintaxe de dois valores (primeiro valor: largura da imagem, segundo valor: altura) e a sintaxe de múltiplos background (separada por vírgula).
+            <br>
+            Valores:
+            <ul>
+                <li>Auto: tamanho original.</li>
+                <li>Length: Define a largura e a altura da imagem de fundo. O primeiro valor define a largura, o segundo valor define a altura. Se apenas um valor for fornecido, o segundo será definido como "auto".</li>
+                <li>Percentage: o mesmo do length.</li>
+                <li>Cover: Redimensione a imagem de fundo para cobrir todo o contêiner, mesmo que seja necessário esticar a imagem ou cortar um pouco de uma das bordas</li>
+                <li>Contain: Redimensione a imagem de plano de fundo para garantir que a imagem esteja totalmente visível</li>
+                <li>Initial: Define esta propriedade com seu valor padrão.</li>
+                <li>Inherit: Herda esta propriedade de seu elemento pai.</li>
+            </ul>
+        </li>
+    </ol>
+
+</body>
+
+</html>
